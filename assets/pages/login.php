@@ -20,17 +20,17 @@
                 </div>
                 <div class="areaLogin">
                     <h2>Faça seu <span>login </span></h2>
-                    <form action="#" method="get">
+                    <form action="./../models/verifyLogin.php" method="post">
 
                         <div class="fieldInput">
                             <p>email</p>
-                            <input type="email" name="" id="" class="field">
+                            <input type="email" name="loginEmail" id="" class="field">
                             <span class="bar"></span>
                         </div>
 
                         <div class="fieldInput">
                             <p>senha</p>
-                            <input type="password" name="" id="" class="field">
+                            <input type="password" name="loginPass" id="" class="field">
                             <span class="bar"></span>
                         </div>
 

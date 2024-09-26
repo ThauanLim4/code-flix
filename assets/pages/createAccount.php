@@ -20,7 +20,7 @@
                 </div>
                 <div class="areaLogin">
                     <h2>Crie sua <span>conta </span></h2>
-                    <form action="#" method="get">
+                    <form action="./../models/createAcco.php" method="post">
 
                         <div class="fieldInput">
                             <p>nome</p>

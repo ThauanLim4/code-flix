@@ -30,9 +30,16 @@
                                 <a href="assets/pages/allLinguages.php">explorar</a>
                             </li>
                             <li>
-                                <a href="assets/pages/login.php">Login <i class="fa-solid fa-user"></i></a>
+                                <a href="assets/pages/login.php">
+                                    <?php session_start();
+                                    if ($_SESSION['loginEmail']) {
+                                        echo 'logado';
+                                    } else {
+                                        echo 'login';
+                                    } ?><i class="fa-solid fa-user"></i>
+                                </a>
                             </li>
-        
+
                         </ul>
                     </div>
 
@@ -174,7 +181,7 @@
 
 
     <script src="assets/js/index.js"></script>
-    <script src="assets/js/functionScript.js"></script>    
+    <script src="assets/js/functionScript.js"></script>
     <script src="https://kit.fontawesome.com/56d6c8a3a3.js" crossorigin="anonymous"></script>
 </body>
 
