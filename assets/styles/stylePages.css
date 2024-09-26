@@ -1,0 +1,600 @@
+@import url('index.css');
+
+.buttonCourse.checked {
+    transition: var(--transitionDefault);
+    border: 2px solid var(--red01);
+    border-style: inset;
+}
+
+.mainContainer {
+    height: 100vh;
+}
+
+
+
+
+
+/* seção das linguagens filtradas */
+
+.sectionLinguagesSelected {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titleLinguageSelected {
+    font-size: 2.5em;
+    color: var(--white01);
+    
+    span {
+        color: var(--red01);
+    }
+}
+
+.areaCoursers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space15);
+}
+
+.courseItem {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space15);
+    width: 100%;
+    max-height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: var(--transitionDefault);
+
+    a {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: relative;
+
+        div i {
+            position: absolute;
+            padding: 3px;
+            background-color: var(--black01);
+            border-radius: 0 0 3px 0;
+        }
+    }
+}
+
+.courseItem a div .courseLesson {
+    position: absolute;
+    background-color: var(--black01);
+    color: var(--white01);
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+}
+
+
+.courseImg {
+    width: 100%;
+    max-height: 200px;
+    max-width: 400px;
+    object-fit: contain;
+}
+
+.courseName {
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: start;
+    color: var(--white01);
+}
+
+.courseAutor {
+    color: var(--white01);
+}
+
+.courseButtonView {
+    max-width: 200px;
+    padding: 10px 5px;
+    cursor: pointer;
+    background-color: var(--white01);
+    transition: var(--transitionDefault);
+}
+
+.courseButtonView:hover {
+    background-color: var(--red01);
+    color: var(--white01);
+}
+
+.courseItem:hover {
+    background-color: #212121;
+}
+
+@media screen and (max-width: 920px) and (min-width: 721px) {
+    .areaCoursers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .courseItem {
+        width: 90%;
+        max-height: 300px;
+    }
+
+    .courseImg {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .courseName {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .TitleSectionRecomendations {
+        font-size: 2em;
+    }
+
+    .areaCoursers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space15);
+    }
+
+    .courseItem {
+        width: 100%;
+        max-width: 300px;
+        height: fit-content;
+    }
+
+    .courseImg {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .courseName {
+        font-size: 1.3em;
+    }
+
+}
+
+
+
+.sectionIntroductionLanguages {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--white01);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space30);
+}
+
+.areaIntroductionLanguages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space30);
+}
+
+.titleSectionLinguages {
+    font-size: 3em;
+
+    span {
+        color: var(--red01);
+    }
+}
+
+.descriptSectionLinguages {
+    font-size: 0.8em;
+}
+
+.sectionAlllinguages form {
+    display: flex;
+    gap: var(--space30);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.buttonCourse {
+    padding: 15px 25px;
+    border: unset;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.buttonCourse input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.checkbox {
+    opacity: 1;
+}
+
+.searchBar {
+    width: 50%;
+    padding: 10px 5px;
+    border: 1px solid var(--red02);
+}
+
+.courseItem div {
+    position: relative;
+}
+
+.courseItem div i {
+    position: absolute;
+    background-color: #212121;
+    border-radius: 0px 0px 5px 0px;
+    padding: 3px;
+}
+
+.filterBtn {
+    padding: 15px 25px;
+    border: unset;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: var(--transitionDefault);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.filterBtn:hover {
+    background-color: var(--red01);
+    color: var(--white01);
+}
+
+
+
+
+
+
+
+
+
+/* Estilos da Pagina com as informações completas do curso */
+
+.sectionCourseInfos {
+    color: var(--white01);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: var(--space15);
+}
+
+.areaInformationsOfCourse {
+    width: 100%;
+}
+
+.areaSeeMore {
+    width: 20%;
+}
+
+.imageInfo {
+    width: 100%;
+    
+    img {
+        max-height: 500px;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space30);
+}
+
+.mainInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infosDescription {
+    font-size: 1.1em;
+}
+
+.infosAreaButtons {
+    margin-top: var(--space30);
+}
+
+.goToCourse {
+    width: 300px;
+    cursor: pointer;
+    margin: 0 auto;
+    background-color: var(--red01);
+    transition: var(--transitionDefault);
+    font-size: 0.9em;
+    padding: var(--space15) 5px;
+}
+.goToCourse a{
+    color: var(--white01);
+}
+
+.goToCourse:hover {
+    background-color: var(--white01);
+
+    a {
+        color: var(--red01);
+    }
+}
+
+.addToFavorites {
+    cursor: pointer;
+    margin: 0 auto;
+    background-color: var(--red01);
+    transition: var(--transitionDefault);
+    font-size: 0.9em;
+    padding: var(--space15);
+    color: var(--white01);
+}
+
+.addToFavorites:hover {
+    background-color: var(--white01);
+    color: var(--red01);
+}
+
+
+@media screen and (max-width: 920px) and (min-width: 521px) {
+    .sectionCourseInfos {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .areaInformationsOfCourse {
+        margin: 0 auto;
+    }
+    
+    .infosCourse h3 {
+        font-size: 1.5em;
+    }
+        
+    .actions {
+        display: flex;
+        position: fixed;
+        bottom: 2em;
+        left: 0;
+        right: 0;
+        gap: var(--space15);
+        padding: var(--space15);
+    }
+    
+    .goToCourse {
+        width: 300px;
+        cursor: pointer;
+        margin: 0 auto;
+        background-color: var(--red01);
+        transition: var(--transitionDefault);
+        font-size: 0.9em;
+        padding: var(--space15) 5px;
+        flex: 5;
+    }
+    .goToCourse a{
+        color: var(--white01);
+    }
+    
+    .goToCourse:hover {
+        background-color: var(--white01);
+    
+        a {
+            color: var(--red01);
+        }
+    }
+    
+    .addFavorites {
+        cursor: pointer;
+        margin: 0 auto;
+        background-color: var(--red01);
+        transition: var(--transitionDefault);
+        font-size: 0.9em;
+        padding: var(--space15);
+        color: var(--white01);
+        flex: 0.5;
+    }
+    
+    .addFavorites:hover {
+        background-color: var(--white01);
+        color: var(--red01);
+    }
+
+    .areaSeeMore {
+        width: 100%;
+    }
+
+    .areaSeeMoreItens {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .divImg .courseImg {
+        max-height: 122px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .areaSeeMoreItens .courseItem a .courseName {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .sectionCourseInfos {
+        flex-direction: column;
+    }
+    
+    .infosCourse h3 {
+        font-size: 1.5em;
+    }
+
+    .mainInfos {
+        h2 {
+            font-size: 1em;
+        }
+
+        h3 {
+            font-size: 0.8em;
+        }
+    }
+
+    .infosDescription {
+        font-size: 1em;
+    }
+
+    .goToCourse {
+        width: 200px;
+        padding: 10 5px;
+        flex: 5;
+    }
+
+    .areaSeeMore {
+        width: 100%;
+    }
+
+    .areaSeeMoreItens {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+
+    .divImg .courseImg {
+        max-height: 122px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .areaSeeMoreItens .courseItem a .courseName {
+        font-size: 1em;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pagina da seção de todas as linguagens */
+.sectionAlllinguages {
+}
+.areaButtons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.areaButtons > .buttonCourse {
+    
+}
+
+.input {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus+.input-border, .input-alt:focus+.input-border-alt {
+    width: 100%;
+    max-width: 750px;
+
+}
+
+.form-control {
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--space15);
+
+}
+
+.input-alt {
+    font-size: 1.2rem;
+    padding-inline: 1em;
+    padding-block: 0.8em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.input-border-alt {
+    height: 3px;
+    background-color: var(--red02);
+    transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+
+
+@media screen and (max-width: 920px) and (min-width: 721px) {}
+
+@media screen and (max-width: 720px) {
+    .sectionAlllinguages.buttonCourse {
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

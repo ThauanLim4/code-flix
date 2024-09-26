@@ -1,0 +1,130 @@
+.headerContainer {
+    background-color: var(--red02);
+    padding: var(--space15);
+    width: 100%;
+    height: 75px;
+}
+
+.contentHeader {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.navigationMenu {
+    display: flex;
+    align-items: center;
+}
+
+.navigationMenu ul {
+    display: flex;
+    gap: var(--space30);
+}
+
+
+
+.navigationMenu ul li {
+    cursor: pointer;
+}
+
+.navigationMenu ul li a {
+    color: var(--black01);
+    transition: var(--transitionDefault);
+}
+
+.title a {
+    color: var(--black01);
+}
+
+.navigationMenu ul li a:hover {
+    color: var(--white01);
+}
+
+.menuHamburguer {
+    display: none;
+    align-self: center;
+}
+
+.menuHamburguer button {
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 5px;
+    transition: var(--transitionDefault);
+    z-index: 10;
+}
+
+.menuFloat {
+    display: none;
+}
+
+.menuHamburguer button:hover {
+    color: var(--white01);
+}
+
+
+@media screen and (max-width: 720px) {
+    .menuHamburguer {
+        display: flex;
+    }
+
+    .navigationMenu {
+        display: none;
+    }
+
+    .menuFloat {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--red02);
+        width: 50%;
+        height: 100%;
+        align-items: start;
+        margin-top: 75px;
+        justify-content: end;
+        opacity: 0;
+        padding: var(--space30);
+    }
+
+    .navigationMenuM {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .navigationMenuM ul  {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space15);
+    }
+
+    .navigationMenuM ul li {
+        text-align: end;
+        color: var(--black01);
+    }
+
+    .navigationMenuM ul li a {
+        text-align: end;
+        font-size: 1.3em;
+        color: var(--black01);
+        transition: var(--transitionDefault);
+    }
+
+    .navigationMenuM ul li a:hover {
+        color: var(--white01);
+    }
+
+
+    .menuFloat.active {
+        display: flex;
+        transition: var(--transitionDefault);
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .close {
+        display: none;
+    }
+}
