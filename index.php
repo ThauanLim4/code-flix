@@ -13,26 +13,27 @@
 <body>
     <header class="headerContainer">
         <div class="contentHeader">
-            <h1 class="title"><a href="index.html">CodeFlix</a></h1>
+            <h1 class="title"><a href="./index.php">CodeFlix</a></h1>
             <nav class="navigationMenu">
                 <ul>
                     <li>
-                        <a href="index.html">início</a>
+                        <a href="./index.php">início</a>
                     </li>
 
                     <div class="suspenseMenu">
                         <p class="btnSuspenseMenu">usuário</p>
                         <ul class="suspenseList">
                             <li>
-                                <a href="assets/pages/favoriteCoursers.html">favoritos</a>
+                                <a href="./assets/pages/favoriteCoursers.php">favoritos</a>
                             </li>
                             <li>
-                                <a href="assets/pages/allLinguages.php">explorar</a>
+                                <a href="./assets/pages/allLinguages.php">explorar</a>
                             </li>
                             <li>
-                                <a href="assets/pages/login.php">
-                                    <?php session_start();
-                                    if ($_SESSION['loginEmail']) {
+                                <a href="./assets/pages/login.php">
+                                    <?php 
+                                    require("./assets/data/config.php");
+                                    if ($_SESSION['nomeUsuario']) {
                                         echo 'logado';
                                     } else {
                                         echo 'login';
@@ -60,16 +61,16 @@
                 <ul>
 
                     <li>
-                        <a href="#">início <i class="fa-solid fa-house"></i></a>
+                        <a href="./index.php">início <i class="fa-solid fa-house"></i></a>
                     </li>
                     <li>
-                        <a href="assets/pages/allLinguages.php">explorar <i class="fa-solid fa-eye"></i></a>
+                        <a href="./assets/pages/allLinguages.php">explorar <i class="fa-solid fa-eye"></i></a>
                     </li>
                     <li>
-                        <a href="assets/pages/favoriteCoursers.php">favoritos <i class="fa-solid fa-heart"></i></a>
+                        <a href="./assets/pages/favoriteCoursers.php">favoritos <i class="fa-solid fa-heart"></i></a>
                     </li>
                     <li>
-                        <a href="assets/pages/about.html">sobre <i class="fa-regular fa-circle-question"></i></a>
+                        <a href="./assets/pages/about.html">sobre <i class="fa-regular fa-circle-question"></i></a>
                     </li>
 
                     <hr>

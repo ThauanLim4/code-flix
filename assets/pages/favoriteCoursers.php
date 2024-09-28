@@ -1,3 +1,20 @@
+<?php 
+    require('./../data/config.php');
+    $infosCursosFavoritados= [];
+    $idDoUsuario = $_SESSION['idUsuario'];
+    $msgAlerta = '';
+    $cursosFavoritados = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE idDoUsuario = :idDoUsuario");
+    $cursosFavoritados->bindValue(':idDoUsuario', $idDoUsuario);
+    $cursosFavoritados->execute();
+
+    if ($cursosFavoritados->rowCount() > 0) {
+        $infosCursosFavoritados = $cursosFavoritados->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $msgAlerta = 'Nenhum curso foi adicionado aos favoritos';
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,9 +35,20 @@
             <section class="sectionIntroduction">
                 <section class="sectionRecomendations">
                     <h2 class="TitleSectionRecomendations">Cursos Favoritados</h2>
+                    <h3 class=""><?= $msgAlerta ?></h3>
 
                     <div class="areaCoursersFavorited">
-
+                        <?php foreach($infosCursosFavoritados as $infos) : ?>
+                        <div class="courseItem">
+                            <a href="./courseInfos.php?result=<?=$infos['id']?>">
+                                <div>
+                                    <img class="courseImg" src="<?= $infos['imagem']?>" alt="">
+                                    <span class="courseLesson">Aulas: <?= $infos['quantAulas']?></span>
+                                </div>
+                                <h3 class="courseName"><?= $infos['nome']?></h3>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </section>
 
@@ -30,7 +58,7 @@
     </main>
 
 
-    <script type="module" src="../js/functionScript.js"></script>    
+    <script type="module" src="../js/functionScript.js"></script>
     <script src="https://kit.fontawesome.com/56d6c8a3a3.js" crossorigin="anonymous"></script>
 </body>
 

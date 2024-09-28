@@ -13,7 +13,6 @@ if ($cursoIdUrlConvert) {
         $cursoInfosLista = $cursoInfos->fetch(PDO::FETCH_ASSOC);
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -57,11 +56,58 @@ if ($cursoIdUrlConvert) {
                             <a target="_blank" href="<?= $cursoInfosLista['link'] ?>">ir para o curso</a>
                         </button>
 
-                        <button class="addToFavorites" onclick="trocarBotao">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
 
-                        <p class="msgAddFavorites"></p>
+                        <a type="submit" class="addToFavorites" href="./../models/addFavoriteCourse.php?result=<?= $cursoInfosLista['id'] ?>">
+                            <?php 
+                            // if($cursoIdUrlConvert){
+
+                            //     $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE idDoUsuario = :idDoUsuario");
+                            //     $btnfavorited->bindValue(':idDoUsuario', $_SESSION['idUsuario']);
+                            //     $btnfavorited->execute();
+
+                            //     // $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE id = :id");
+                            //     // $btnfavorited->bindValue(':id', $cursoIdUrlConvert);
+                            //     // $btnfavorited->execute();
+                            
+                            //     if () {
+                            //         echo "<i class='fa-solid fa-heart'></i>";
+                            //     } else {
+                            //         echo "<i class='fa-regular fa-heart'></i>";
+                            //     }
+                            // }
+
+                            if($cursoIdUrlConvert){
+
+                                $a = [];
+
+                                $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE idDoUsuario = :idDoUsuario");
+                                $btnfavorited->bindValue(':idDoUsuario', $_SESSION['idUsuario']);
+                                $btnfavorited->execute();
+
+                                // $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE id = :id");
+                                // $btnfavorited->bindValue(':id', $cursoIdUrlConvert);
+                                // $btnfavorited->execute();
+                                
+                                $a = $btnfavorited->fetchAll(PDO::FETCH_ASSOC);
+
+
+                            
+                                if ($cursoIdUrlConvert === $a[0]['id']) {
+                                    echo "<i class='fa-solid fa-heart'></i>";
+                                } else {
+                                    echo "<i class='fa-regular fa-heart'></i>";
+                                }
+                            }
+
+                            
+                            ?>
+                        </a>
+
+
+                        <p class="msgAddFavorites">
+
+                        <?php var_dump($a); ?>
+                        </p>
                     </div>
 
                 </div>
@@ -97,16 +143,22 @@ if ($cursoIdUrlConvert) {
             </section>
         </div>
     </main>
+
     <script>
-        function trocarBotao() {
-            let msgAddFavorites = document.querySelector('.msgAddFavorites');
-            let btnAddToFavorites = document.querySelector('.addToFavorites');
-            <?php echo "codigo php ta funcionando junto com javascript" ?>
-            console.log('adicionado aos favoritos')
-            btnAddToFavorites.querySelector('i').classList.replace('fa-regular', 'fa-solid');
-        }
+        let btnAddToFavorites = document.querySelector('.addToFavorites');
+        let msgAddFavorites = document.querySelector('.msgAddFavorites');
+        btnAddToFavorites.addEventListener('click', () => {
+            console.log('adicionado aos favoritos');
+            btnAddToFavorites.querySelector('i').classList.toggle('fa-solid');
+            msgAddFavorites.textContent = 'Adicionado aos favoritos!';
+
+            setTimeout(() => {
+                msgAddFavorites.textContent = '';
+
+            }, 3000)
+        })
     </script>
-    <script type="module" src="./../js/functionScript.js"></script>
+    <script src="./../js/functionScript.js"></script>
     <script src="https://kit.fontawesome.com/56d6c8a3a3.js" crossorigin="anonymous"></script>
 </body>
 

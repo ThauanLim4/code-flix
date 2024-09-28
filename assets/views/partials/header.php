@@ -1,10 +1,10 @@
     <header class="headerContainer">
         <div class="contentHeader">
-            <h1 class="title"><a href="../../index.html">CodeFlix</a></h1>
+            <h1 class="title"><a href="../../index.php">CodeFlix</a></h1>
             <nav class="navigationMenu">
                 <ul>
                     <li>
-                        <a href="./../../index.html">início</a>
+                        <a href="./../../index.php">início</a>
                     </li>
 
                     
@@ -38,7 +38,7 @@
             <nav class="navigationMenuM">
                 <ul>
                     <li>
-                        <a href="./../../index.html">início <i class="fa-solid fa-house"></i></a>
+                        <a href="./../../index.php">início <i class="fa-solid fa-house"></i></a>
                     </li>
                     <li>
                         <a href="./allLinguages.php">explorar <i class="fa-solid fa-eye"></i></a>

@@ -5,6 +5,8 @@ openMenu.addEventListener('click', () => {
     menuFloat.classList.toggle('active');
 })
 
+
+
 // let btnAddToFavorites = document.querySelector('.addToFavorites');
 // let areaCoursersFavorited = document.querySelector('.areaCoursersFavorited')
 

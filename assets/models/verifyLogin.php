@@ -13,6 +13,7 @@
 
         $usuario = $procurarUsuario->fetch(PDO::FETCH_ASSOC);
         $_SESSION['nomeUsuario'] = $usuario['nome'];
+        $_SESSION['idUsuario'] = $usuario['id'];
 
         if($usuario) {
             header('Location: ../../index.php');
