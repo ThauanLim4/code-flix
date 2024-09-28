@@ -58,55 +58,38 @@ if ($cursoIdUrlConvert) {
 
 
                         <a type="submit" class="addToFavorites" href="./../models/addFavoriteCourse.php?result=<?= $cursoInfosLista['id'] ?>">
-                            <?php 
-                            // if($cursoIdUrlConvert){
+                            <?php
+                            if ($cursoIdUrlConvert) {
 
-                            //     $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE idDoUsuario = :idDoUsuario");
-                            //     $btnfavorited->bindValue(':idDoUsuario', $_SESSION['idUsuario']);
-                            //     $btnfavorited->execute();
-
-                            //     // $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE id = :id");
-                            //     // $btnfavorited->bindValue(':id', $cursoIdUrlConvert);
-                            //     // $btnfavorited->execute();
-                            
-                            //     if () {
-                            //         echo "<i class='fa-solid fa-heart'></i>";
-                            //     } else {
-                            //         echo "<i class='fa-regular fa-heart'></i>";
-                            //     }
-                            // }
-
-                            if($cursoIdUrlConvert){
-
-                                $a = [];
+                                $cursosFavLista = [];
 
                                 $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE idDoUsuario = :idDoUsuario");
                                 $btnfavorited->bindValue(':idDoUsuario', $_SESSION['idUsuario']);
                                 $btnfavorited->execute();
 
-                                // $btnfavorited = $pdo->prepare("SELECT * FROM cursosfavoritados WHERE id = :id");
-                                // $btnfavorited->bindValue(':id', $cursoIdUrlConvert);
-                                // $btnfavorited->execute();
-                                
-                                $a = $btnfavorited->fetchAll(PDO::FETCH_ASSOC);
+                                $favoritado = false;
+                                $cursosFavLista = $btnfavorited->fetchAll(PDO::FETCH_ASSOC);
 
+                                foreach ($cursosFavLista as $favLista) {
+                                    if ($cursoIdUrlConvert === $favLista['id'] && $favLista['idDoUsuario'] === $_SESSION['idUsuario']) {
+                                        echo "<i class='fa-solid fa-heart'></i>";
+                                        $favoritado = true;
+                                        break;
+                                    }
+                                }
 
-                            
-                                if ($cursoIdUrlConvert === $a[0]['id']) {
-                                    echo "<i class='fa-solid fa-heart'></i>";
-                                } else {
+                                if (!$favoritado) {
                                     echo "<i class='fa-regular fa-heart'></i>";
                                 }
                             }
 
-                            
+
                             ?>
                         </a>
 
 
                         <p class="msgAddFavorites">
 
-                        <?php var_dump($a); ?>
                         </p>
                     </div>
 
