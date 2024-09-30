@@ -34,7 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <title>codeFlix</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="./../styles/index.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" type="text/css" href="../styles/stylePages.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./../styles/stylePages.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./../styles/header.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -98,16 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                         <input type="submit" class="filterBtn" value="Filtrar">
                     </form>
                 </section>
-                <div>
-                    <form method="get">
-                        <div class="form-control">
-                            <input class="input input-alt" placeholder="buscar curso" required="" name="searchCourse"
-                                type="search">
-                            <span class="input-border input-border-alt"></span>
-                        </div>
-
-                    </form>
-                </div>
             </section>
             <section class="sectionCourses">
                 <div class="areaCoursers">

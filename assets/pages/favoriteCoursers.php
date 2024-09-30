@@ -24,6 +24,7 @@
     <title>codeFlix</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" type="text/css" href="./../styles/header.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -32,10 +33,9 @@
         <div class="maincontent">
 
 
-            <section class="sectionIntroduction">
-                <section class="sectionRecomendations">
-                    <h2 class="TitleSectionRecomendations">Cursos Favoritados</h2>
-                    <h3 class=""><?= $msgAlerta ?></h3>
+            <section class="sectionFavorited">
+                <span class=""><?= $msgAlerta ?></span>
+                <h2 class="TitleSectionFavorited">Cursos Favoritados</h2>
 
                     <div class="areaCoursersFavorited">
                         <?php foreach($infosCursosFavoritados as $infos) : ?>
@@ -50,7 +50,6 @@
                         </div>
                         <?php endforeach; ?>
                     </div>
-                </section>
 
             </section>
 

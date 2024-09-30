@@ -7,7 +7,7 @@
     <title>faça login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="./../styles/login.css">
+    <link rel="stylesheet" href="./../styles/login.css?v=<?php echo time();?>">
 </head>
 
 <body>

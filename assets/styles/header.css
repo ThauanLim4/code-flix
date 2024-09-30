@@ -22,6 +22,7 @@
 .navigationMenu ul {
     display: flex;
     gap: var(--space30);
+    position: relative;
 }
 
 
@@ -61,6 +62,48 @@
     display: none;
 }
 
+.suspenseMenu{
+    text-align: center;
+    width: 10em;
+    position: relative;
+    transition: var(--transitionDefault);
+    z-index: 100;
+
+    p {
+        margin: 0 auto;
+        text-align: center;
+        background: transparent;
+        border: none;
+        font-size: 1em;
+        color: var(--black01);
+        cursor: pointer;
+        transition: var(--transitionDefault);
+    }
+}
+.btnSuspenseMenu:hover {
+    color: var(--white01);
+}
+
+.suspenseMenu .suspenseList {
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    background-color: var(--red02);
+}
+
+.suspenseMenu:hover .suspenseList{
+    display: flex;
+}
+
+
 .menuHamburguer button:hover {
     color: var(--white01);
 }
@@ -80,7 +123,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        background-color: var(--red02);
+        background: linear-gradient(to bottom, #C73659, #A91D3A) var(--red01);
         width: 50%;
         height: 100%;
         align-items: start;
@@ -128,4 +171,6 @@
     .close {
         display: none;
     }
+
+
 }

@@ -7,7 +7,7 @@
                         <a href="./../../index.php">início</a>
                     </li>
 
-                    
+
                     <div class="suspenseMenu">
                         <p class="btnSuspenseMenu">usuário</p>
                         <ul class="suspenseList">
@@ -18,9 +18,19 @@
                                 <a href="./allLinguages.php">explorar</a>
                             </li>
                             <li>
-                                <a href="login.php">Login <i class="fa-solid fa-user"></i></a>
+                                <a href="login.php">
+                                    <?php
+                                    if ($secaoIdUsuario) {
+                                        echo 'logado ';
+                                        echo "<i class='fa-solid fa-user'></i>";
+                                    } else {
+                                        echo 'login ';
+                                        echo "<i class='fa-solid fa-right-to-bracket'>";
+                                    }
+                                    ?>
+                                </a>
                             </li>
-        
+
                         </ul>
                     </div>
 
@@ -53,7 +63,17 @@
                     <hr>
 
                     <li>
-                        <a href="./login.php">login <i class="fa-solid fa-right-to-bracket"></i></a>
+                        <a href="./login.php">
+                            <?php
+                            if ($secaoIdUsuario) {
+                                echo 'logado ';
+                                echo "<i class='fa-solid fa-user'></i>";
+                            } else {
+                                echo 'login ';
+                                echo "<i class='fa-solid fa-right-to-bracket'>";
+                            }
+                            ?>
+                        </a>
                     </li>
                 </ul>
             </nav>

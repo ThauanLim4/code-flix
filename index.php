@@ -1,3 +1,4 @@
+<?php require("./assets/data/config.php");?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>codeFlix</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/styles/index.css">
-    <link rel="stylesheet" href="assets/styles/stylePages.css">
+    <link rel="stylesheet" href="./assets/styles/index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./assets/styles/header.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -31,13 +32,15 @@
                             </li>
                             <li>
                                 <a href="./assets/pages/login.php">
-                                    <?php 
-                                    require("./assets/data/config.php");
-                                    if ($_SESSION['nomeUsuario']) {
-                                        echo 'logado';
+                                    <?php
+                                    if ($secaoIdUsuario) {
+                                        echo 'logado ';
+                                        echo "<i class='fa-solid fa-user'></i>";
                                     } else {
-                                        echo 'login';
-                                    } ?><i class="fa-solid fa-user"></i>
+                                        echo 'login ';
+                                        echo "<i class='fa-solid fa-right-to-bracket'>";
+                                    } 
+                                    ?>
                                 </a>
                             </li>
 
@@ -76,7 +79,17 @@
                     <hr>
 
                     <li>
-                        <a href="assets/pages/login.php">login <i class="fa-solid fa-right-to-bracket"></i></a>
+                        <a href="assets/pages/login.php"> 
+                            <?php
+                                if ($secaoIdUsuario) {
+                                    echo 'logado ';
+                                    echo "<i class='fa-solid fa-user'></i>";
+                                } else {
+                                    echo 'login ';
+                                    echo "<i class='fa-solid fa-right-to-bracket'>";
+                                } 
+                            ?>
+                        </a>
                     </li>
 
                 </ul>
@@ -98,54 +111,42 @@
                     </div>
                 </div>
                 <section class="linguages">
-                    <button class="buttonCourse html" value="html">
-                        <a href="assets/pages/filtedLinguage.php?linguage=html">
-                            html
-                        </a>
-                    </button>
-                    <button class="buttonCourse css">
-                        <a href="assets/pages/filtedLinguage.php?linguage=css">
-                            css
-                        </a>
-                    </button>
-                    <button class="buttonCourse js">
-                        <a href="assets/pages/filtedLinguage.php?linguage=javascript">
-                            javascript
-                        </a>
-                    </button>
-                    <button class="buttonCourse php">
-                        <a href="assets/pages/filtedLinguage.php?linguage=php">
-                            php
-                        </a>
-                    </button>
-                    <button class="buttonCourse nodejs">
-                        <a href="assets/pages/filtedLinguage.php?linguage=nodejs>">
-                            nodeJs
-                        </a>
-                    </button>
-                    <button class="buttonCourse java">
-                        <a href="assets/pages/filtedLinguage.php?linguage=java">
-                            java
-                        </a>
-                    </button>
+                    <a class="buttonCourse html" href="assets/pages/filtedLinguage.php?linguage=html">
+                        html
+                    </a>
 
-                    <button class="buttonCourse csharp">
-                        <a href="assets/pages/filtedLinguage.php?linguage=csharp">
-                            c#
-                        </a>
-                    </button>
+                    <a class="buttonCourse css" href="assets/pages/filtedLinguage.php?linguage=css">
+                        css
+                    </a>
 
-                    <button class="buttonCourse python">
-                        <a href="assets/pages/filtedLinguage.php?linguage=python">
-                            python
-                        </a>
-                    </button>
+                    <a class="buttonCourse js" href="assets/pages/filtedLinguage.php?linguage=javascript">
+                        javascript
+                    </a>
 
-                    <button class="buttonCourse">
-                        <a href="assets/pages/allLinguages.php">
-                            ver tudo <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </button>
+                    <a class="buttonCourse php" href="assets/pages/filtedLinguage.php?linguage=php">
+                        php
+                    </a>
+
+                    <a class="buttonCourse nodejs" href="assets/pages/filtedLinguage.php?linguage=nodejs>">
+                        nodeJs
+                    </a>
+
+                    <a class="buttonCourse java" href="assets/pages/filtedLinguage.php?linguage=java">
+                        java
+                    </a>
+
+                    <a class="buttonCourse csharp" href="assets/pages/filtedLinguage.php?linguage=csharp">
+                        c#
+                    </a>
+
+                    <a class="buttonCourse python" href="assets/pages/filtedLinguage.php?linguage=python">
+                        python
+                    </a>
+
+                    <a class="buttonCourse" href="assets/pages/allLinguages.php">
+                        ver tudo <i class="bi bi-arrow-right"></i>
+                    </a>
+
                 </section>
 
                 <section class="sectionRecomendations">
@@ -162,18 +163,18 @@
             <div class="areaInfo">
                 <h2>Informações</h2>
                 <ul>
-                    <li><a href="">Quem somos</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Portifólio</a></li>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Portifólio</a></li>
                 </ul>
             </div>
 
             <div class="areaSocial">
                 <h2>Social</h2>
                 <ul>
-                    <li><a href="">whatsapp <i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="">linkedin <i class="fa-brands fa-linkedin"></i></a></li>
-                    <li><a href="">instagram <i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5583998093699" target="_blank">whatsapp <i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a target="_blank" href="www.linkedin.com/in/thauan-lima-120bb6311">linkedin <i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/thaau_lisouza?utm_source=qr&igsh=cGUyMGdnMG1scnZw">instagram <i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </div>
 

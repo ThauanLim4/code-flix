@@ -122,3 +122,69 @@
         color: var(--red02);
     }
 }
+
+@media screen and (max-width: 920px) and (min-width: 721px) {
+    .sectionLogin {
+        flex-direction: column;
+    }
+
+    .bannerCreateAcc {
+        width: 100%;
+        max-width: 600px;
+        max-height: 400px;
+        margin: 0 auto;
+    }
+    
+    .imgLogin img {
+        width: 100%;
+        max-width: 600px;
+        max-height: 400px;
+        margin: 0 auto;
+    }
+    
+    .areaLogin form {
+        width: 100%;
+        padding: var(--space15);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space30);
+    }
+    
+    .fieldInput {
+        width: 100%;
+        max-width: 750px;
+        color: var(--white01);
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .sectionLogin {
+        flex-direction: column;
+    }
+    
+    .areaLogin {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .areaLogin form {
+        gap: var(--space30);
+    }
+    
+    .areaLogin h2 {
+        font-size: 2.3em;
+    }
+
+    
+    .btnLogin {
+        height: 50px;
+        width: 14em;
+        margin: 0 auto;
+    }
+        
+}
+

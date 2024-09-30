@@ -187,6 +187,9 @@
     font-size: 0.8em;
 }
 
+.sectionAlllinguages {
+    margin-bottom: var(--space30);
+}
 .sectionAlllinguages form {
     display: flex;
     gap: var(--space30);
@@ -410,7 +413,7 @@
         font-size: 0.9em;
         padding: var(--space15);
         color: var(--white01);
-        flex: 0.5;
+        flex: 1;
     }
     
     .addFavorites:hover {
@@ -573,6 +576,29 @@
 
 
 
+/* estilos da pagina sobre nós */
+
+.aboutUs {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--white01);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space30);
+}
+
+.aboutUs h1 {
+    font-size: 2.5em;
+}
+
+.aboutUs h2 {
+    font-size: 1.5em;
+    
+    span {
+        color: var(--red01);
+    }
+}
 
 
 

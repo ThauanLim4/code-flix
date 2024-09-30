@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url("header.css");
-@import url("stylePages.css");
+@import url('header.css');
+@import url('login.css');
+@import url('stylePages.css');
 
 :root {
     --black01: #151515;
@@ -55,44 +56,6 @@ body {
     }
 }
 
-.suspenseMenu{
-    text-align: center;
-    width: 100px;
-    position: relative;
-    transition: var(--transitionDefault);
-
-    p {
-        margin: 0 auto;
-        text-align: center;
-        background: transparent;
-        border: none;
-        font-size: 1em;
-        color: var(--black01);
-        cursor: pointer;
-        transition: var(--transitionDefault);
-    }
-}
-.btnSuspenseMenu:hover {
-    color: var(--white01);
-}
-
-.suspenseMenu .suspenseList {
-    padding: 20px;
-    flex-direction: column;
-    gap: 10px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    display: none;
-    background-color: var(--red02);
-}
-
-.suspenseMenu:hover .suspenseList{
-    display: flex;
-}
-
-
 
 .sectionIntroduction {
     display: flex;
@@ -132,27 +95,21 @@ body {
     gap: var(--space30);
 }
 
-.buttonCourse {
-    cursor: pointer;
-
-    a {
-        color: var(--black01);
-    }
-}
 
 .buttonCourse {
     padding: 15px 25px;
     border: unset;
-    color: #212121;
     z-index: 1;
     background: #e8e8e8;
     position: relative;
-    font-weight: 1000;
-    font-size: 17px;
+    font-weight: bolder;
+    font-size: 1em;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     transition: all 250ms;
     overflow: hidden;
+    cursor: pointer;
+    color: var(--black01);
 }
 
 .buttonCourse::before {
@@ -166,7 +123,13 @@ body {
     z-index: -1;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms
+    transition: all 250ms;
+}
+
+.buttonCourse:hover {
+    color: var(--white01);
+    text-shadow: 0px 0px 5px var(--black01);
+
 }
 
 
@@ -200,13 +163,6 @@ body {
 
 .buttonCourse.csharp::before{
     background-color: var(--csharp);
-}
-
-.buttonCourse:hover {
-    a {
-        color: var(--white01);
-        text-shadow: 0px 0px 5px var(--black01);
-    }
 }
 
 .buttonCourse:hover::before {
@@ -459,6 +415,60 @@ body {
 
 
 
+/* seção dos cursos favoritos */
+
+
+
+
+.sectionFavorited {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--white01);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space15);
+    color: var(--white01);
+}
+
+.TitleSectionFavorited {
+    font-size: 2.5em;
+}
+
+.areaCoursersFavorited {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space15);
+}
+
+.sectionFavorited .areaCoursersFavorited .courseItem {
+    width: 100%;
+}
+
+@media screen and (max-width: 920px) and (min-width: 721px) {
+    .TitleSectionFavorited {
+        font-size: 2em;
+    }
+    .areaCoursersFavorited {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .TitleSectionFavorited {
+        font-size: 2em;
+    }
+
+    .areaCoursersFavorited {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space15);
+    }
+
+}
 
 
 
